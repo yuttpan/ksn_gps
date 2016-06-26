@@ -1,12 +1,14 @@
 angular.module('starter')
 
   .controller('Login',function ($scope,$http,$state) {
-      $scope.username = "" ;
+      $scope.username = "admin" ;
+      $scope.password = "" ;
     $scope.btnLogin= function (data) {
               var uname = $scope.username ;
+              var pwd = $scope.password ;
               console.log(uname);
 
-      $http.get('http://118.175.76.244:81/HouseGps/check_login.php?username=adin&password=admin').success(function(response){
+      $http.get('http://118.175.76.244:81/HouseGps/check_login.php?username='+uname+'&password='+pwd).success(function(response){
 var d = response[0].status;
 console.log(d);
 if (d=="OK"){
