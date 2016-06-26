@@ -1,0 +1,21 @@
+<ion-view>
+  <ion-nav-bar>
+    <ion-nav-title align="center">
+      <h2>เข้าสู่ระบบ</h2>
+    </ion-nav-title>
+    <ion-nav-back-button class="button button-dark"></ion-nav-back-button>
+</ion-nav-bar>
+  <ion-content class="padding" ng-controller="Login">
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input type="text" placeholder="Username" ng-model="username">
+      </label>
+      <label class="item item-input">
+        <input type="password" placeholder="Password" ng-model="password">
+      </label>
+    </div>
+    <button class="button button-block button-calm" ng-click="btnLogin()" >Login</button>
+  </ion-content>
+
+
+</ion-view>
