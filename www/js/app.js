@@ -35,6 +35,12 @@ angular.module('starter', ['ionic'])
       controller: 'Login',
       templateUrl:'templates/login.html'
     })
+    .state('main',{
+      url:'/main',
+      controller: 'main',
+  params:{'name': null, 'username': null},
+      templateUrl:'templates/main.html'
+    })
 
   $urlRouterProvider.otherwise('/home')
 })
