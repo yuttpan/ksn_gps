@@ -37,7 +37,7 @@ angular.module('starter', ['ionic'])
     })
     .state('map',{
       url:'/map',
-      controller: 'MyCtrl',
+    controller: 'MyCtrl',
       templateUrl:'templates/map.html'
     })
     .state('main',{
