@@ -6,7 +6,8 @@ angular.module('starter')
   .controller('main',function ($scope,$http,$state,$stateParams) {
 
     console.log("Main");
-    var index = $stateParams.name;
-    console.log(index);
+    var names = $stateParams.name;
+    $scope.name = names;
+    console.log($scope.name);
 
   })

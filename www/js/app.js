@@ -35,6 +35,11 @@ angular.module('starter', ['ionic'])
       controller: 'Login',
       templateUrl:'templates/login.html'
     })
+    .state('map',{
+      url:'/map',
+      controller: 'MyCtrl',
+      templateUrl:'templates/map.html'
+    })
     .state('main',{
       url:'/main',
       controller: 'main',
