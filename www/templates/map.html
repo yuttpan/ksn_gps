@@ -1,5 +1,12 @@
-<ion-view>
-  <ion-content ng-controller="MyCtrl">
 
-  </ion-content>
+
+<ion-view>
+     <ion-header-bar class="bar-stable">
+            <h1 class="title">Map example</h1>
+        </ion-header-bar>
+        <ion-content ng-controller="MapController">
+            <div id="map" data-tap-disabled="false"></div>
+          {{lat}} {{long}}
+        </ion-content>
 </ion-view>
+ <script src="https://maps-api-ssl.google.com/maps/api/js?libraries=places"></script>
