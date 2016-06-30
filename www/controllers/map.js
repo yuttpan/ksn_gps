@@ -1,6 +1,7 @@
 angular.module('starter')
  .controller('MapCtrl', function($scope, $state, $cordovaGeolocation) {
-    var options = {timeout: 5000, enableHighAccuracy: true};
+     $scope.getlatlng=function(){
+          var options = {timeout: 5000, enableHighAccuracy: true};
     console.log("map");
     $cordovaGeolocation.getCurrentPosition(options).then(function(position){
 $scope.latitude = position.coords.latitude ;
@@ -18,4 +19,6 @@ $scope.longitude = position.coords.longitude ;
     }, function(error){
       console.log("Could not get location");
     });
+     }
+   
   });

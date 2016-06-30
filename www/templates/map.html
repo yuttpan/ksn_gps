@@ -1,6 +1,25 @@
 <ion-view>
-  <ion-content ng-controller="MapCtrl">
-    <div id="map" data-tap-disabled="true"></div>
-    hgg{{latitude}}..........{{longitude}}
-  </ion-content>
+    
+  <ion-nav-bar>
+    <ion-nav-title align="center">
+      <h2>แผนที่</h2>
+    </ion-nav-title>
+  
+</ion-nav-bar>
+<ion-content>
+<div class="list list-inset">
+  <label class="item item-input">
+    <span class="input-label" >Username</span>
+    <input type="text" ng-model="latitude">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Password</span>
+    <input type="password">
+  </label>
+    <button class="button button-calm" ng-click="getlatlng()">
+  button-calm
+</button>
+</div>
+</ion-content>
 </ion-view>
+    
