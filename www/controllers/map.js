@@ -1,40 +1,21 @@
 angular.module('starter')
-.controller('MapController', function($scope, $cordovaGeolocation, $ionicLoading, $ionicPlatform) {
+ .controller('MapCtrl', function($scope, $state, $cordovaGeolocation) {
+    var options = {timeout: 5000, enableHighAccuracy: true};
+    console.log("map");
+    $cordovaGeolocation.getCurrentPosition(options).then(function(position){
+$scope.latitude = position.coords.latitude ;
+$scope.longitude = position.coords.longitude ;
+      var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
-    $ionicPlatform.ready(function() {
+      var mapOptions = {
+        center: latLng,
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
 
-        $ionicLoading.show({
-            template: '<ion-spinner icon="bubbles"></ion-spinner><br/>Acquiring location!'
-        });
+      $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
-        var posOptions = {
-            enableHighAccuracy: true,
-            timeout: 20000,
-            maximumAge: 0
-        };
-        $cordovaGeolocation.getCurrentPosition(posOptions).then(function (position) {
-            var lat  = position.coords.latitude;
-            var long = position.coords.longitude;
-
-            var myLatlng = new google.maps.LatLng(lat, long);
-             $scope.lat = lat ;
-             $scope.long = long ;
-            var mapOptions = {
-                center: myLatlng,
-                zoom: 16,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            };
-
-            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-
-            $scope.map = map;
-            $ionicLoading.hide();
-
-        }, function(err) {
-            $ionicLoading.hide();
-            console.log(err);
-        });
+    }, function(error){
+      console.log("Could not get location");
     });
-});
-
-
+  });

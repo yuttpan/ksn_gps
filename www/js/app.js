@@ -37,7 +37,7 @@ angular.module('starter', ['ionic','ngCordova'])
     })
     .state('map',{
       url:'/map',
-    controller: 'MapController',
+    controller: 'MapCtrl',
       templateUrl:'templates/map.html'
     })
     .state('main',{
