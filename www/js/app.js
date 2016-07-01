@@ -40,6 +40,16 @@ angular.module('starter', ['ionic','ngCordova'])
     controller: 'MapCtrl',
       templateUrl:'templates/map.html'
     })
+    .state('servey',{
+      url:'/servey',
+      controller: 'serveyCtrl',
+      templateUrl:'templates/servey.html'
+    })
+    .state('user',{
+      url:'/user',
+      controller: 'userCtrl',
+      templateUrl:'templates/user.html'
+    })
     .state('main',{
       url:'/main',
       controller: 'main',
@@ -49,3 +59,6 @@ angular.module('starter', ['ionic','ngCordova'])
 
   $urlRouterProvider.otherwise('/home')
 })
+
+// Database instance.
+var db;
